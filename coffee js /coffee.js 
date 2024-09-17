@@ -1,0 +1,4 @@
+console.log(fetch('https://api.sampleapis.com/coffee/hot', {
+    mode: 'cors'
+}))
+ 
