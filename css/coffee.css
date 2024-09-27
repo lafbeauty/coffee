@@ -8,6 +8,7 @@ html {
   height: 100%;
   overflow-y: scroll;
 }
+/*background pic for body is not workiing*/
 
 body {
   font-family: "Roboto", sans-serif;
@@ -15,22 +16,22 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  background-color: #2b2414;
   text-align: center;
   color: #000000;
-  background-image: url('/Users/laurafloyd/Desktop/CTD/coffeeAPI/coffee/Images /beans.jpg');
+  background-image: url("/Users/laurafloyd/Desktop/CTD/coffeeAPI/coffee/Images/coffeebeans.jpg");
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
+  background-color: #2b2414;
 }
 
 header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: #c1a98c
-  padding: 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #c1a98c;
+  /*padding: 20px;*/
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);*/
 }
 
 h1 {
@@ -41,7 +42,7 @@ h1 {
   font-style: normal;
   margin: 0;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: #bca890 ;
+  background-color: #bca890;
 }
 
 #navbar {
@@ -78,7 +79,7 @@ main {
   max-width: 1000px;
   margin: 40px auto;
   padding: 30px;
-  background-color: #775b45; 
+  background-color: #775b45;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
@@ -114,66 +115,59 @@ ul {
 li:last-child {
   border-bottom: none;
 }*/
-#hot-coffee-data , #iced-coffee-data  {
-    display: flex;
-    flex-direction: row; /* Ensure items are in a row */
-    /*flex-wrap: wrap; /* Allow wrapping to next line if needed */
-    justify-content: center; /* Align items to the start of the container */
-    align-items: flex-start;
-    gap: 20px; /* Space between items */
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    overflow-x: auto; /* Allows horizontal scrolling if needed */
-    padding-bottom: 20px; /* Space for the scrollbar */
-  }
+#hot-coffee-data,
+#iced-coffee-data {
+  display: flex;
+  flex-direction: row; /* Ensure items are in a row */
+  /*flex-wrap: wrap; /* Allow wrapping to next line if needed */
+  justify-content: center; /* Align items to the start of the container */
+  align-items: flex-start;
+  gap: 20px; /* Space between items */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  overflow-x: auto; /* Allows horizontal scrolling if needed */
+  padding-bottom: 20px; /* Space for the scrollbar */
+}
 
-  
-  
+.drink-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(20% - 20px); /* 20% width for 5 items per row, subtracting gap */
+  min-width: 150px; /* Minimum width to prevent squishing on smaller screens */
+  margin-bottom: 20px; /* Space between rows */
+}
+
+.drink-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.drink-name {
+  font-size: 16px;
+  text-align: center;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
   .drink-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: calc(20% - 20px); /* 20% width for 5 items per row, subtracting gap */
-    min-width: 150px; /* Minimum width to prevent squishing on smaller screens */
-    margin-bottom: 20px; /* Space between rows */
+    width: calc(33.33% - 20px); /* 3 items per row on smaller screens */
   }
-  
-  .drink-image {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 10px;
-  }
-  
-  .drink-name {
-    font-size: 16px;
-    text-align: center;
-    max-width: 100%;
-    word-wrap: break-word;
-  }
-  
-  /* Media query for responsiveness */
-  @media (max-width: 768px) {
-    .drink-item {
-      width: calc(33.33% - 20px); /* 3 items per row on smaller screens */
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .drink-item {
-      width: calc(50% - 20px); /* 2 items per row on very small screens */
-    }
-  }
-  
-  #page-footer{
-    font-family: "Roboto", sans-serif;
-    color: #e9e4dc
+}
 
+@media (max-width: 480px) {
+  .drink-item {
+    width: calc(50% - 20px); /* 2 items per row on very small screens */
   }
-  
-  
-  
-  
-  
+}
+
+#page-footer {
+  font-family: "Roboto", sans-serif;
+  color: #e9e4dc;
+}
