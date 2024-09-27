@@ -1,0 +1,15 @@
+ fetch('https://api.sampleapis.com/coffee/hot')
+	.then((response)=>{
+  		if (response.ok){
+      	return response.json();
+      } else{
+      		throw new Error("Failed to pull coffeeAPI data");
+      }
+  })
+ .then((data)=>{
+    console.log(data);
+ })
+ .catch((error)=>{
+	console.error("error:", error);
+ });
+ 
